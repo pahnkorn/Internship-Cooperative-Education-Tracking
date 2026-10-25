@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Tracking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand">Internship Tracking</div>
+    <span class="status">● ระบบพร้อมใช้งาน</span>
+</header>
+
+<main class="container">
+    <h1>ระบบติดตามการฝึกงาน<br>และสหกิจศึกษา</h1>
+    </p>
+
+    <section class="stats">
+        <article class="card">
+            <p>นักศึกษาทั้งหมด</p>
+            <h2 id="studentCount">0</h2>
+        </article>
+        <article class="card">
+            <p>การสมัครฝึกงาน</p>
+            <h2 id="applicationCount">0</h2>
+        </article>
+        <article class="card">
+            <p>ระบบฐานข้อมูล</p>
+            <h2 id="databaseStatus">ยังไม่เชื่อมต่อ</h2>
+        </article>
+    </section>
+
+</main>
+
+</body>
+</html>
