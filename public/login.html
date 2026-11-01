@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ - Internship Tracking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand">Internship Tracking</div>
+</header>
+
+<main class="container login-container">
+    <div class="login-box">
+        <h1 class="login-title">เข้าสู่ระบบ</h1>
+        <p class="login-error" id="loginError">ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง</p>
+
+        <form method="POST" action="/login" class="login-form">
+            <label for="username">ชื่อผู้ใช้</label>
+            <input type="text" id="username" name="username" autocomplete="username" required>
+
+            <label for="password">รหัสผ่าน</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" required>
+
+            <button type="submit">เข้าสู่ระบบ</button>
+        </form>
+
+        <p class="login-hint">
+            บัญชีทดสอบ: student / student123 (นักศึกษา)<br>
+            mentor / mentor123 (พี่เลี้ยง)
+        </p>
+    </div>
+</main>
+
+<script>
+    if (new URLSearchParams(location.search).get("error")) {
+        document.getElementById("loginError").style.display = "block";
+    }
+</script>
+</body>
+</html>

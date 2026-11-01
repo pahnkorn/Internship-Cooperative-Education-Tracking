@@ -10,7 +10,13 @@
 <body>
 <header class="topbar">
     <div class="brand">Internship Tracking</div>
-    <span class="status">● ระบบพร้อมใช้งาน</span>
+    <div class="topbar-right">
+        <span class="status">● ระบบพร้อมใช้งาน</span>
+        <span class="user-info" id="userInfo"></span>
+        <form method="POST" action="/logout" class="logout-form">
+            <button type="submit" class="logout-btn">ออกจากระบบ</button>
+        </form>
+    </div>
 </header>
 
 <main class="container">
@@ -34,5 +40,15 @@
 
 </main>
 
+<script>
+    fetch("/api/me")
+        .then((res) => res.json())
+        .then((data) => {
+            if (data.username) {
+                document.getElementById("userInfo").textContent =
+                    `${data.username} (${data.role})`;
+            }
+        });
+</script>
 </body>
 </html>
