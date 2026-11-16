@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ | Internship Tracking</title>
+    <style>
+        *{ box-sizing: border-box }
+        body {
+            margin: 0;
+            font-family: Arial, Tahoma, sans-serif;
+            background: #D3D3D3;
+            color: #172033;
+        }
+        .topbar{
+            background: black;
+            color: #D3D3D3;
+            padding: 20px 7%;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .login-card {
+            background: #2563eb;
+            max-width: 380px;
+            margin: 80px auto;
+            padding: 32px;
+            border-radius: 16px;
+        }
+        h1 { margin: 0 0 24px; font-size: 24px; }
+        label { display: block; margin-bottom: 6px; font-size: 14px; }
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            margin-bottom: 18px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #000;
+            color: #D3D3D3;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover { background: #D3D3D3; }
+        .error {
+            display: none;
+            background: #fee2e2;
+            color: #b91c1c;
+            padding: 10px 12px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">Internship Tracking</header>
+    <main class="login-card">
+        <h1>เข้าสู่ระบบ</h1>
+        <div id="errorMessage" class="error">ชื่อ หรือ รหัสผ่าน ไม่ถูกต้อง</div>
+        <form method="POST" action="/login">
+            <label for="username">ชื่อผู้ใช้</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">รหัสผ่าน</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">เข้าสู่ระบบ</button>
+        </form>
+    </main>
+
+    <script>
+        if (new URLSearchParams(location.search).get("error")){
+            document.getElementById("errorMessage").style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship Tracking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand">Internship Tracking</div>
+    <div class="user-area">
+        <span class="status">● ระบบพร้อมใช้งาน</span>
+        <span id="userName" class="user-name"></span>
+        <form method="POST" action="/logout">
+            <button type="submit" class="logout-btn">ออกจากระบบ</button>
+        </form>
+    </div>
+</header>
+
+<main class="container">
+    <h1>ระบบติดตามการฝึกงาน<br>และสหกิจศึกษา</h1>
+    </p>
+
+    <section class="stats">
+        <article class="card">
+            <p>นักศึกษาทั้งหมด</p>
+            <h2 id="studentCount">0</h2>
+        </article>
+        <article class="card">
+            <p>การสมัครฝึกงาน</p>
+            <h2 id="applicationCount">0</h2>
+        </article>
+        <article class="card">
+            <p>ระบบฐานข้อมูล</p>
+            <h2 id="databaseStatus">ยังไม่เชื่อมต่อ</h2>
+        </article>
+    </section>
+    <section class="panel">
+        <h2>เพิ่มนักศึกษา</h2>
+        <form id="studentForm" class="student-form">
+            <input type="text" id="studentCodeInput" placeholder="รหัสนักศึกษา" required>
+            <input type="text" id="fullNameInput" placeholder="ชื่อ-นามสกุล" required>
+            <input type="text" id="majorInput" placeholder="สาขา">
+            <button type="submit">เพิ่ม</button>
+        </form>
+        <p id="formMessage" class="form-message"></p>
+    </section>
+
+    <section class="panel">
+        <h2>รายชื่อนักศึกษา</h2>
+        <input type="text" id="searchInput" class="search-input" placeholder="ค้นหาด้วยรหัสหรือชื่อ...">
+        <table class="data-table">
+            <thead>
+            <tr>
+                <th>รหัสนักศึกษา</th>
+                <th>ชื่อ-นามสกุล</th>
+                <th>สาขา</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody id="studentTableBody">
+            <tr><td colspan="4">กำลังโหลด...</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
